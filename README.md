@@ -22,6 +22,11 @@ __사용전 반드시 아래 주의사항을 읽어주세요.__
 - pandas_datareader 
 - requests (slack 사용하지 않을 경우 생략 가능)
 
+eFriendPy 폴더에서 아래 명령어로 한꺼번에 설치가 가능합니다. (가상환경 사용 추천)
+```shell
+pip install -r requirements.txt
+```
+
 ## 파일 설명
 - eFriendPy/Core.py : eFriend expert에서 제공하는 공식 API에 대한 wrapper class인 StandardAPIWrapper 클래스가 정의되어 있습니다.  
 공식 API와 관련된 자세한 내용은 eFriend expert 공식 메뉴얼 및 eFriend viewer를 참고하세요.  
