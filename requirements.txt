@@ -1,0 +1,17 @@
+certifi==2022.5.18.1
+charset-normalizer==2.0.12
+idna==3.3
+lxml==4.9.0
+multitasking==0.0.10
+numpy==1.22.4
+pandas==1.4.2
+pandas-datareader==0.10.0
+PyQt5==5.15.6
+PyQt5-Qt5==5.15.2
+PyQt5-sip==12.10.1
+python-dateutil==2.8.2
+pytz==2022.1
+requests==2.28.0
+six==1.16.0
+urllib3==1.26.9
+yfinance==0.1.70
