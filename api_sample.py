@@ -13,34 +13,37 @@ def main():
     api = HighLevelAPI()
 
     # # 로그를 slack으로 받고 싶은 경우 (예시)
-    # api.logger = SlackLogger()
-    # api.logger.InitSlack("put_your_token_here", "put_your_channel_here")
+    # api.logger = SlackLogger("put_your_token_here", "put_your_channel_here")
 
     # ===== API 사용 예시 ======
-    print("eFriend expert 연결 여부: {0}".format(api.IsConnected()))
+    isConnected = api.IsConnected()
+    print(f"eFriend expert 연결 여부: {isConnected}")
     Accounts = api.GetAllAccounts()
-    print("보유 계좌들: {0}".format(Accounts))
+    print(f"보유 계좌들: {Accounts}")
 
     # 계좌 비밀번호 4자리 세팅
     api.Password = "0000"
+
+    if isConnected == False:
+        return
 
     # 사용할 계좌 
     account = Accounts[0]
 
     cash_kr = api.GetCashKR(account)
-    print("주문 가능한 원화: {0} 원".format(cash_kr))
+    print(f"주문 가능한 원화: {cash_kr} 원")
 
     cash_us = api.GetCashUS(account)
-    print("주문 가능한 달러: {0} 달러".format(cash_us))
+    print(f"주문 가능한 달러: {cash_us} 달러")
 
     rate = api.GetUSDtoKRWRate(account)
-    print("현재 예상 환율: 1 달러 당 {0} 원".format(rate))
+    print(f"현재 예상 환율: 1 달러 당 {rate} 원")
 
     stocks_kr = api.GetKRStocks(account)
-    print("보유 국내주식: {0}".format(stocks_kr))
+    print(f"보유 국내주식: {stocks_kr}")
 
     stocks_us = api.GetUSStocks(account)
-    print("보유 미국주식: {0}".format(stocks_us))
+    print(f"보유 미국주식: {stocks_us}")
     
 
 
