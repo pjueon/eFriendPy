@@ -16,12 +16,16 @@ def main():
     # api.logger = SlackLogger("put_your_token_here", "put_your_channel_here")
 
     # ===== API 사용 예시 ======
-    print(f"eFriend expert 연결 여부: {api.IsConnected()}")
+    isConnected = api.IsConnected()
+    print(f"eFriend expert 연결 여부: {isConnected}")
     Accounts = api.GetAllAccounts()
     print(f"보유 계좌들: {Accounts}")
 
     # 계좌 비밀번호 4자리 세팅
     api.Password = "0000"
+
+    if isConnected == False:
+        return
 
     # 사용할 계좌 
     account = Accounts[0]
