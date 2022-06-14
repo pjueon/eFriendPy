@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication
 from eFriendPy.API import *
+import eFriendPy
 
 # 로그를 slack으로 받고 싶은 경우 필요함
 from SlackLogger import SlackLogger
@@ -16,6 +17,8 @@ def main():
     # api.logger = SlackLogger("put_your_token_here", "put_your_channel_here")
 
     # ===== API 사용 예시 ======
+    print(f"version: {eFriendPy.VERSION}")
+
     isConnected = api.IsConnected()
     print(f"eFriend expert 연결 여부: {isConnected}")
     Accounts = api.GetAllAccounts()
