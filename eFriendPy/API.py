@@ -1,4 +1,5 @@
-from eFriendPy.Core import *
+from .Core import *
+from .Logger import *
 import pandas as pd 
 from datetime import datetime
 import yfinance as yf 
@@ -10,7 +11,7 @@ class HighLevelAPI():
     def __init__(self):
         self._core = StandardAPIWrapper()
         self.Password = "0000"                  # 사용자가 직접 입력해야하는 부분
-        self.logger = lambda msg : print(msg)   # 사용자가 logger를 외부에서 수정할 수 있도록함(ex> slack 연동 등)
+        self.logger = DefaultLogger()           # 사용자가 logger를 외부에서 수정할 수 있도록함(ex> slack 연동 등)
 
         def SendLogWhenError():
             if self._core.GetRtCode() != "0":

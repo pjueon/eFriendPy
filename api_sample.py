@@ -13,8 +13,7 @@ def main():
     api = HighLevelAPI()
 
     # # 로그를 slack으로 받고 싶은 경우 (예시)
-    # api.logger = SlackLogger()
-    # api.logger.InitSlack("put_your_token_here", "put_your_channel_here")
+    # api.logger = SlackLogger("put_your_token_here", "put_your_channel_here")
 
     # ===== API 사용 예시 ======
     print("eFriend expert 연결 여부: {0}".format(api.IsConnected()))

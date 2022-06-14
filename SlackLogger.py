@@ -1,19 +1,24 @@
-from slack import Slack
-from datetime import datetime
+import requests
+from eFriendPy.Logger import DefaultLogger
 
-class SlackLogger:
-    def __init__(self):
-        self.slack = Slack()
+# 사용자 정의 Logger의 예시
 
-    def InitSlack(self, token, channel):
-        """slack 관련 정보를 초기화한다."""
-        self.slack.token = token
-        self.slack.channel = channel
+class SlackLogger(DefaultLogger):
+    def __init__(self, token, channel):
+        """slack token, channel 초기화"""
+        self.token = token
+        self.channel = channel
 
     def __call__(self, msg):
         """콘솔과 slack에 로그 메시지를 쓴다"""
-        msg = "{0} {1}".format(
-            datetime.now().strftime('[%Y/%m/%d %H:%M:%S]'), msg)
+        msg = self.Format(msg)
         print(msg)
-        self.slack.post(msg)
+        self.Post(msg)
 
+    def Post(self, msg):
+        """slack으로 메시지를 보낸다"""
+        response = requests.post("https://slack.com/api/chat.postMessage",
+                                 headers={
+                                     "Authorization": "Bearer "+self.token},
+                                 data={"channel": self.channel, "text": msg}
+                                 )
