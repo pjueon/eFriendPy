@@ -32,7 +32,7 @@ pip install -r requirements.txt
 공식 API와 관련된 자세한 내용은 eFriend expert 공식 메뉴얼 및 eFriend viewer를 참고하세요.  
 - eFriendPy/API.py : StandardAPIWrapper 클래스를 사용하여 고수준 API를 구현한 예제 코드입니다. 
 - api_sample.py : eFriendPy/API.py 파일에서 정의한 고수준 API를 사용하는 간단한 예제입니다.
-- slack.py, SlackLogger.py : api 사용중 로그 메시지를 slack으로 받기 위한 코드입니다 (옵션). 
+- SlackLogger.py : api 사용중 로그 메시지를 slack으로 받기 위한 코드입니다 (옵션). 
 
 
 ## 프로그램 실행 방법  
