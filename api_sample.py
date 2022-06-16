@@ -6,9 +6,6 @@ import eFriendPy
 from SlackLogger import SlackLogger
 
 def main():
-    # Qt 사용하기 위해서 반드시 필요함
-    app = QApplication(sys.argv)    
-
     # api 객체 생성
     api = eFriendPy.Api()
 
