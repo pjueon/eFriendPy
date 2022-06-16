@@ -28,10 +28,10 @@ class DefaultLogger:
         self.headerTimeFormat = headerTimeFormat
 
     def __call__(self, msg):
-        print(self.Format(msg))
+        print(self.format(msg))
 
-    def Header(self):
+    def header(self):
         return datetime.now().strftime(self.headerTimeFormat)
 
-    def Format(self, msg):
-        return f"{self.Header()} {msg}"
+    def format(self, msg):
+        return f"{self.header()} {msg}"

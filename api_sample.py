@@ -20,12 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import sys
-from PyQt5.QtWidgets import QApplication
 import eFriendPy
 
-# 로그를 slack으로 받고 싶은 경우 필요함
-from SlackLogger import SlackLogger
+# # 로그를 slack으로 받고 싶은 경우 필요함
+# from SlackLogger import SlackLogger
 
 def main():
     # api 객체 생성
@@ -37,33 +35,33 @@ def main():
     # ===== API 사용 예시 ======
     print(f"version: {eFriendPy.__version__}")
 
-    isConnected = api.IsConnected()
-    print(f"eFriend expert 연결 여부: {isConnected}")
-    Accounts = api.GetAllAccounts()
-    print(f"보유 계좌들: {Accounts}")
+    is_connected = api.is_connected()
+    print(f"eFriend expert 연결 여부: {is_connected}")
+    accounts = api.get_all_accounts()
+    print(f"보유 계좌들: {accounts}")
 
     # 계좌 비밀번호 4자리 세팅
-    api.Password = "0000"
+    api.password = "0000"
 
-    if isConnected == False:
+    if is_connected == False:
         return
 
     # 사용할 계좌 
-    account = Accounts[0]
+    account = accounts[0]
 
-    cash_kr = api.GetCashKR(account)
+    cash_kr = api.get_kr_buyable_cash(account)
     print(f"주문 가능한 원화: {cash_kr} 원")
 
-    cash_us = api.GetCashUS(account)
+    cash_us = api.get_us_buyable_cash(account)
     print(f"주문 가능한 달러: {cash_us} 달러")
 
-    rate = api.GetUSDtoKRWRate(account)
+    rate = api.get_usd_to_krw_rate(account)
     print(f"현재 예상 환율: 1 달러 당 {rate} 원")
 
-    stocks_kr = api.GetKRStocks(account)
+    stocks_kr = api.get_kr_stock_balance(account)
     print(f"보유 국내주식: {stocks_kr}")
 
-    stocks_us = api.GetUSStocks(account)
+    stocks_us = api.get_us_stock_balance(account)
     print(f"보유 미국주식: {stocks_us}")
     
 

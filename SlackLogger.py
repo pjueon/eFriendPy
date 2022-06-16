@@ -33,7 +33,7 @@ class SlackLogger(DefaultLogger):
 
     def __call__(self, msg):
         """콘솔과 slack에 로그 메시지를 쓴다"""
-        msg = self.Format(msg)
+        msg = self.format(msg)
         print(msg)
         self.Post(msg)
 
