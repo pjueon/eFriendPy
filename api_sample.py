@@ -20,12 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import sys
-from PyQt5.QtWidgets import QApplication
 import eFriendPy
 
-# 로그를 slack으로 받고 싶은 경우 필요함
-from SlackLogger import SlackLogger
+# # 로그를 slack으로 받고 싶은 경우 필요함
+# from SlackLogger import SlackLogger
 
 def main():
     # api 객체 생성
