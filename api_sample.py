@@ -1,23 +1,19 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-from eFriendPy.API import *
 import eFriendPy
 
 # 로그를 slack으로 받고 싶은 경우 필요함
 from SlackLogger import SlackLogger
 
 def main():
-    # Qt 사용하기 위해서 반드시 필요함
-    app = QApplication(sys.argv)    
-
     # api 객체 생성
-    api = HighLevelAPI()
+    api = eFriendPy.Api()
 
     # # 로그를 slack으로 받고 싶은 경우 (예시)
     # api.logger = SlackLogger("put_your_token_here", "put_your_channel_here")
 
     # ===== API 사용 예시 ======
-    print(f"version: {eFriendPy.VERSION}")
+    print(f"version: {eFriendPy.__version__}")
 
     isConnected = api.IsConnected()
     print(f"eFriend expert 연결 여부: {isConnected}")

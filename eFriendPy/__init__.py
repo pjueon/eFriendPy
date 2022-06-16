@@ -1,1 +1,2 @@
-VERSION = "0.0.1"
+from .Api import *
+__version__ = "0.0.1"

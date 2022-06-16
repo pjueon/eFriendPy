@@ -1,5 +1,5 @@
 # eFriendPy
-python을 이용하여 한국투자증권 Open API (eFriend expert)를 사용하는 예제 코드입니다.  
+python으로 한국투자증권의 HTS 기반 API (eFriend expert)를 사용하기 위한 패키지입니다.  
 __사용전 반드시 아래 주의사항을 읽어주세요.__
 
 
@@ -28,10 +28,10 @@ pip install -r requirements.txt
 ```
 
 ## 파일 설명
-- eFriendPy/Core.py : eFriend expert에서 제공하는 공식 API에 대한 wrapper class인 StandardAPIWrapper 클래스가 정의되어 있습니다.  
+- eFriendPy/Core.py : eFriend expert에서 제공하는 공식 API에 대한 wrapper 클래스가 정의되어 있습니다.  
 공식 API와 관련된 자세한 내용은 eFriend expert 공식 메뉴얼 및 eFriend viewer를 참고하세요.  
-- eFriendPy/API.py : StandardAPIWrapper 클래스를 사용하여 고수준 API를 구현한 예제 코드입니다. 
-- api_sample.py : eFriendPy/API.py 파일에서 정의한 고수준 API를 사용하는 간단한 예제입니다.
+- eFriendPy/Api.py : Core를 사용하여 구현한 고수준 API입니다. 
+- api_sample.py : eFriendPy/Api.py 파일에서 정의한 고수준 API를 사용하는 간단한 예제입니다.
 - SlackLogger.py : api 사용중 로그 메시지를 slack으로 받기 위한 코드입니다 (옵션). 
 
 

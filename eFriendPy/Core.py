@@ -1,13 +1,22 @@
+from typing import Optional
 from PyQt5.QAxContainer import QAxWidget
 from PyQt5.QtCore import QEventLoop
+from PyQt5.QtWidgets import QApplication
+from typing import Optional
+import sys
 
+app : Optional[QApplication] = None
 
-class StandardAPIWrapper:
+class Core:
     """ 한국투자증권 eFriend Expert 표준 API Reference Guide에 소개된 API 함수들 중 일부를 wrapping 한 객체
     """
-    def __init__(self):
+    def __init__(self, createQApplicationInternally = True):
         self._instance = QAxWidget("ITGExpertCtl.ITGExpertCtlCtrl.1")
         self.EventLoop = None
+
+        if createQApplicationInternally:
+            global app
+            app = QApplication(sys.argv) 
 
     def _setEventHandler(self, event, handler):
         """이벤트 핸들러 등록 관련함수의 코드 중복을 제거하기 위한 함수"""
