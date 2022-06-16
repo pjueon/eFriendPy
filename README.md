@@ -37,5 +37,5 @@ pip install -r requirements.txt
 
 ## 프로그램 실행 방법  
 1. eFreind expert 프로그램 실행 후 로그인한다.   
-2. eFriendPy/Core.py, eFriendPy/API.py, api_sample.py 등을 참고하여 원하는 프로그램을 작성한다.
+2. eFriendPy/Core.py, eFriendPy/Api.py, api_sample.py 등을 참고하여 원하는 프로그램을 작성한다.
 3. __관리자권한으로__ 작성한 코드를 실행한다.  
