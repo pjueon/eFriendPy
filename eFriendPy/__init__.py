@@ -20,5 +20,5 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from .Api import *
+from ._Api import *
 __version__ = "0.0.1"
