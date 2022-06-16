@@ -6,10 +6,10 @@ import yfinance as yf
 from pandas_datareader import data as pdr 
 yf.pdr_override()
 
-class HighLevelAPI():
-    """고수준 API 구현 예시"""
+class Api():
+    """고수준 API"""
     def __init__(self):
-        self._core = StandardAPIWrapper()
+        self._core = Core()
         self.Password = "0000"                  # 사용자가 직접 입력해야하는 부분
         self.logger = DefaultLogger()           # 사용자가 logger를 외부에서 수정할 수 있도록함(ex> slack 연동 등)
 

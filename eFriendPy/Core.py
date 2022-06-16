@@ -2,7 +2,7 @@ from PyQt5.QAxContainer import QAxWidget
 from PyQt5.QtCore import QEventLoop
 
 
-class StandardAPIWrapper:
+class Core:
     """ 한국투자증권 eFriend Expert 표준 API Reference Guide에 소개된 API 함수들 중 일부를 wrapping 한 객체
     """
     def __init__(self):
