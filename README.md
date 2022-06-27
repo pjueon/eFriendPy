@@ -1,7 +1,6 @@
 # eFriendPy
-python으로 한국투자증권의 HTS 기반 API (eFriend expert)를 사용하기 위한 패키지입니다.  
-__사용전 반드시 아래 주의사항을 읽어주세요.__
-
+- python으로 한국투자증권의 HTS 기반 API (eFriend expert)를 사용하기 위한 패키지입니다. __사용전 반드시 아래 주의사항을 읽어주세요.__
+- 한국투자증권의 새로운 Open Trading API 기반의 python 패키지는 [pjueon/pykis](https://github.com/pjueon/pykis)를 참고하세요.   
 
 # 주의사항  
 - 이 코드는 아무런 제약없이 자유롭게 사용/수정 가능합니다.  
